@@ -1,0 +1,13 @@
+header {
+    width: 100%;
+    background: #b07694;
+    height: 70px;
+    position: fixed;
+}
+
+h1{
+    font-size: 200%;
+    text-align: center;
+    margin: 1%;
+    color: aliceblue;
+}
