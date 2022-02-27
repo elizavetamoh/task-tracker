@@ -1,5 +1,5 @@
-import LoginForm from "./components/Login/LoginForm";
-import Header from "./components/Header/Header";
+import LoginForm from "./components/Login";
+import Header from "./components/Header";
 
 
 function App() {

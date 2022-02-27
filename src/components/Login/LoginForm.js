@@ -1,18 +1,33 @@
 import React from 'react';
-import './LoginForm.css';
+import styled from 'styled-components'
+import Input from "../Input";
 
-function handleChange(event) {
-    console.log(event.target.value);
-}
+const Form = styled.form`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+`
 
-function blurHandler(event) {
-    console.log(event.target.value.trim());
-}
+const ButtonImg = styled.button`
+    border: none;
+    background-color: #fff0;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 19px;
+    left: 90px;
+`
 
+const Img = styled.img`
+    width: 15px;
+`
 
 function show_hide_password(target){
     let input = document.getElementById('passwordInput');
-    if (input.getAttribute('type') == 'password') {
+    if (input.getAttribute('type') === 'password') {
         input.setAttribute('type', 'text');
     } else {
         input.setAttribute('type', 'password');
@@ -20,23 +35,17 @@ function show_hide_password(target){
     return false;
 }
 
-export default function LoginForm() {
-    return(
-        <div className="loginForm">
-            <form>
-                <label>
-                    <p>Username</p>
-                    <input type="text" onChange={handleChange} onBlur={blurHandler}/>
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" id="passwordInput" onChange={handleChange} onBlur={blurHandler}/>
-                    <a href="#" className="password-control" onClick={show_hide_password}><img src="https://designlooter.com/images/eye-svg-19.png"/></a>
-                </label>
-                <div>
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
+
+export default function LoginForm(){
+        return(
+            <Form>
+                <Input name={"Username"} type={"text"} id={""}/>
+                <Input name={"Password"} type={"password"} id="passwordInput"/>
+                <ButtonImg onClick={show_hide_password}>
+                    <Img src="https://designlooter.com/images/eye-svg-19.png"/>
+                </ButtonImg>
+                <button type="submit">Submit</button>
+
+            </Form>
     )
 }
