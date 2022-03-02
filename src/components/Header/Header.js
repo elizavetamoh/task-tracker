@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import styled from 'styled-components'
 
-const Headerr = styled.header`
+const StyledHeader = styled.header`
         display: flex;
         justify-content: center;
         width: 100%;
@@ -18,10 +18,10 @@ const Title = styled.h1`
 `
 
 
-export default function Header (){
+export default function Header (props){
         return(
-            <Headerr>
-                <Title>Login Form</Title>
-            </Headerr>
+            <StyledHeader>
+                <Title>{props.title}</Title>
+            </StyledHeader>
         )
 }

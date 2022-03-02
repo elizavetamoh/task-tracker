@@ -14,11 +14,11 @@ function blurHandler(event) {
     return event.target.value.trim();
 }
 
-export default function Input(props){
+export default function Input({name, type, id, onChange}){
     return(
         <label>
-            <Text>{props.name}</Text>
-            <input type={props.type} id={props.id} onChange={handleChange} onBlur={blurHandler}/>
+            <Text>{name}</Text>
+            <input type={type} id={id} onChange={onChange} />
         </label>
     );
 }

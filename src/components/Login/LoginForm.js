@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import Input from "../Input";
 
@@ -36,15 +36,39 @@ function show_hide_password(target){
 }
 
 
+
 export default function LoginForm(){
+
+    const [profile, setProfile] = useState({
+        username: "",
+        password: "",
+    });
+
+    const onNameChange = (e) => {
+        setProfile({ ...profile, username: e.target.value });
+    };
+
+    const onPasswordChange = (e) => {
+        setProfile({ ...profile, password: e.target.value });
+    };
+
+    useEffect(() => {
+        console.log("change!!!");
+    });
+
+
+    const showNameAndPass = () => {
+        console.log(profile)
+
+    }
         return(
             <Form>
-                <Input name={"Username"} type={"text"} id={""}/>
-                <Input name={"Password"} type={"password"} id="passwordInput"/>
-                <ButtonImg onClick={show_hide_password}>
+                <Input name={"Username"} type={"text"} id={""} onChange={onNameChange}/>
+                <Input name={"Password"} type={"password"} id="passwordInput" onChange={onPasswordChange}/>
+                <ButtonImg type="button" onClick={show_hide_password}>
                     <Img src="https://designlooter.com/images/eye-svg-19.png"/>
                 </ButtonImg>
-                <button type="submit">Submit</button>
+                <button type="button" onClick={showNameAndPass}>Submit</button>
 
             </Form>
     )
