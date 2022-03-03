@@ -1,13 +1,16 @@
-import LoginForm from "./components/Login";
-import Header from "./components/Header";
-
+import Login from "./pages/Login";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Index from "./pages";
 
 function App() {
   return (
-    <div>
-        <Header title={"Login Page"}/>
-        <LoginForm/>
-    </div>
+      <Router>
+          <Routes>
+              <Route path={"/"} element={Index()}/>
+              <Route path={"/login"} element={<Login/>}/>
+          </Routes>
+      </Router>
+
   );
 }
 
