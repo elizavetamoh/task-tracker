@@ -5,10 +5,11 @@ export const Text = styled.p`
 `
 
 export const StyledInput = styled.input`
-
     background: white;
     box-shadow: 0 0 2em #f9e6f6;
     padding: 1em;
     border-radius: 01em;
     border: none;
+    width: 15em;
 `
+

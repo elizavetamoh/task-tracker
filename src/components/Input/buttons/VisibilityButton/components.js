@@ -7,8 +7,6 @@ export const StyledVisibilityButton = styled.button`
     outline: none;
     cursor: pointer;
     position: relative;
-    bottom: 19px;
-    left: 90px;
     bottom: 2.1em;
     left: 7em;
 `
