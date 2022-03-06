@@ -9,11 +9,11 @@ function blurHandler(event) {
     return event.target.value.trim();
 }
 
-export default function Input({name, type, id, title, onChange}){
+export default function Input({label, name, type, id, value, onChange, required}){
     return(
         <label>
-            <Text>{name}</Text>
-            <StyledInput type={type} id={id} title={title} onChange={onChange} onBlur={blurHandler}/>
+            <Text>{label}</Text>
+            <StyledInput name={name} type={type} id={id} value={value} onChange={onChange} onBlur={blurHandler} required={required} />
         </label>
     );
 }
