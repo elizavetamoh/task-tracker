@@ -4,7 +4,7 @@ import DefaultLayout from "../../components/DefaultLayout";
 import VisibilityButton from "../../components/Input/buttons/VisibilityButton";
 import Input from "../../components/Input";
 import Button from "../../components/Input/buttons/Button";
-import {EmailValidate} from "../../validators/formValidator";
+import {Validate} from "../../validators/formValidator";
 
 export default function Index() {
 
@@ -18,7 +18,7 @@ export default function Index() {
         const name = e.target.name;
         const value = e.target.value;
         setState({...state, [name]: value});
-        EmailValidate(name, value, state);
+        Validate(name, value, state);
     }
 
     const isDisabled = () => {

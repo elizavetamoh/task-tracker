@@ -1,4 +1,4 @@
-export function EmailValidate(fieldName, value, state) {
+export function Validate(fieldName, value, state) {
     let fieldValidationErrors = state.formErrors;
     let valid;
     switch (fieldName) {
@@ -13,6 +13,10 @@ export function EmailValidate(fieldName, value, state) {
         case 'lastName':
             valid = value.length >= 3;
             fieldValidationErrors.lastName = valid ? '' : 'Minimum length 3 characters';
+            break;
+        case 'avatar':
+            valid = value.match(/\.(gif|jpe?g|tiff?|png|webp|bmp)$/i);
+            fieldValidationErrors.password = valid ? '' : 'Please add image';
             break;
         case 'password':
             valid = value.match(/^(?=.*[0-9])(?=.*[a-z]).{1,20}$/i) && value.length > 0;
